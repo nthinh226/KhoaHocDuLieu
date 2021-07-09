@@ -1,0 +1,11 @@
+Hãy tạo 1 file có tên là: <mã sinh viên>.txt (ví dụ sinh viên có mã sv là: 123 thì file cần đọc là: 123.txt). Mỗi thông tin sau trên 1 dòng: Họ tên, mã sinh viên, giới tính, ngày sinh, quê quán, số điện thoại, Facebook). Đọc 1 file trên và in ra màn hình 5 dòng cuối cùng. (yêu cầu sinh viên lấy theo đúng thông tin của mình).
+
+
+Đọc 1 file, thống kê và in ra tần xuất xuất hiện của tất cả các từ trong file, in theo thứ tự giảm dần của số lần xuất hiện
+
+
+
+Nhập một từ điển D có các value là các số nguyên, hãy in ra màn hình 3 giá trị value lớn nhất
+
+
+Nhập vào một chuỗi từ người dùng, kiểm tra xem đó có phải địa chỉ email hợp lệ hay không?
