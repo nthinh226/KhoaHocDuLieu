@@ -15,6 +15,7 @@ for i in range(len(data)):
     name.append(data[i][1])
     amount.append(data[i][3])
 
+
 """
 Ghi chú:
     **bar thì nhãn label
@@ -126,9 +127,26 @@ df.to_excel(xl, index= False)
 print(df)
 """
 
-"""
+#""
 #f. Tìm loại hoa có giá đắt nhất, số lượng ít nhất
-df = pd.read_excel(xl)
-print("Loại hoa có giá đắt nhất là",df['Tên'].max())
-print("Loại hoa có số lượng ít là",df['Tên'].min())
-"""
+import openpyxl
+def getValueExcel(fileName, cellName):
+    wB = openpyxl.load_workbook(fileName)
+    wS = wB['Trang tính 1']
+    wB.close()
+    return trang_tinh_1[cellName].valuefileName = "D:\\xyz.xlsx"
+#Tìm max
+max = getValueExcel(fileName, 'E' + str(2))
+viTri = 0
+for i in range(2, 8 + 1):
+    if (max < getValueExcel(fileName, 'E' + str(i))):
+        max = getValueExcel(fileName, 'E' + str(i))
+        viTri = iprint('Hoa đắt nhất là: ' + getValueExcel(fileName, 'B' + str(viTri)), '-', max)
+#Tìm min
+min = getValueExcel(fileName, 'F' + str(2))
+viTri2 = 0
+for i in range(2, 8 + 1):
+    if (min > getValueExcel(fileName, 'D' + str(i))):
+        min = getValueExcel(fileName, 'D' + str(i))
+        viTri2 = iprint('Hoa có số lượng ít nhất là: ' + getValueExcel(fileName, 'B' + str(viTri2)), '-', min)
+#"""
