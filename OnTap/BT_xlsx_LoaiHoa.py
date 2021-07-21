@@ -15,7 +15,7 @@ data=(['STT', 'Tên', 'Nơi trồng', 'Số lượng', 'Giá', 'Tổng'],
     [5, 'Hoa Giấy', 'Bến Tre', 752, 78, ''],
     [6, 'Hoa Mai', 'Vĩnh Long', 478, 92, ''],
     [7, 'Hoa Tulip', 'Đà Lạt', 354, 47, ''],)
-'''
+#'''
 #----------------------------------------------------------------------
 #a. Trực quan hoá dữ liệu theo sơ đồ hình: cột, hình tròn (tính phần trăm) theo sl hoa
 
@@ -36,6 +36,7 @@ data={'Hoa Lài':100,
     'Hoa Mai':478,
     'Hoa Tulip':354}
 
+#plt.bar(truc x, truc y)
 plt.bar(range(len(data)), data.values(), label="Số lượng hoa")
 plt.title("Biểu đồ tròn về số lượng hoa")
 plt.xlabel("Tên hoa")
@@ -143,7 +144,7 @@ def updateValueExcel(fileName, cellName, value):
     wB.close()
     wB.save(fileName)
 
-xl = "tao1file.xlsx"
+xl = "xyz.xlsx"
 tongList = []
 #range(0,n-1)
 for i in range(2,8+1): #range chạy từ 2-8
@@ -157,10 +158,11 @@ for i in range(len(tongList)): #i: 0->7 =>> 2->8
 import pandas as pd
 print(pd.read_excel(xl))
 
-"""
+# """
 
 #----------------------------------------------------------------------
-"""
+
+#"""
 #f. Tìm loại hoa có giá đắt nhất, số lượng ít nhất
 import openpyxl
 
@@ -170,11 +172,11 @@ def getValueExcel(fileName, cellName):
     wB.close()
     return wS[cellName].value
 
-xl = "tao1file.xlsx"
+xl = "xyz.xlsx"
 
     #Tìm max
 max = getValueExcel(xl, 'E' + str(2))
-viTri = 0
+viTri = 2
 
 for i in range(2, 8 + 1):
     if (max < getValueExcel(xl, 'E' + str(i))):
@@ -183,12 +185,12 @@ for i in range(2, 8 + 1):
 print('Hoa đắt nhất là: ' + getValueExcel(xl, 'B' + str(viTri)), 'có đơn giá', max)
 
     #Tìm min
-min = getValueExcel(xl, 'F' + str(2))
-viTri2 = 0
+min = getValueExcel(xl, 'D' + str(2))
+viTri2 = 2
 
 for i in range(2, 8 + 1):
     if (min > getValueExcel(xl, 'D' + str(i))):
         min = getValueExcel(xl, 'D' + str(i))
         viTri2 = i
-print('Hoa có số lượng ít nhất là: ' + getValueExcel(xl, 'B' + str(viTri2)), 'có số lượng', min)
+print('Hoa có số lượng ít nhất là: ' + getValueExcel(xl, 'B'+str(viTri2)), 'có số lượng', min)
 #"""
